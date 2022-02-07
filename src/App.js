@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Register from "./views/Register";
+import Navbar from "./components/Navbar";
+import { Routes } from "react-router-dom";
+import { render } from "@testing-library/react";
+import { Component } from "react";
+import { Route } from "react-router-dom";
+import Home from "./views/Home";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <>
+      <Navbar />
+        <div className='container'>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="register" element={<Register />} />
+            {/* <Route path="posts" element={<PostList /> } /> */}
+          </Routes>
+        </div>
+      </>
+    );
+  }
 }
 
-export default App;
